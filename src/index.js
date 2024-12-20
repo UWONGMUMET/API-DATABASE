@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000;
 const express = require('express');
 const usersRoutes = require('./routes/users');
 const productsRouters = require('./routes/products');
+const inventoryRouters = require('./routes/inventory');
 
 const middlewareLogRequest = require('./middleware/logs');
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use('/users', usersRoutes);
 app.use('/products', productsRouters);
+app.use('/inventory', inventoryRouters);
 
 app.listen(PORT, () => {
     console.log(`Server berhasil di running di port ${PORT}`)
